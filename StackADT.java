@@ -90,6 +90,17 @@ public interface StackADT<E> {
      */
     int size();
 	
+    /**
+     * Returns an array containing all of the elements in this stack in proper sequence
+     * (from top to bottom element). 
+     * The runtime type of the returned array is of specified array.
+     * 
+     * @param copy the array into which the elements are to be stored, otherwise 
+     *             a new array of the same runtime type is allocated
+     * @return an array containing all of the elements in this stack in proper sequence
+     * @throws NullPointerException if the specified array is null
+     * @post The stack remains unchanged
+     */
 	E[] toArray(E[] copy);
 	
     /**
