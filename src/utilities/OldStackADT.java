@@ -1,3 +1,4 @@
+package utilities;
 import java.util.Iterator;
 import java.util.EmptyStackException;
 /**
@@ -6,7 +7,7 @@ import java.util.EmptyStackException;
  * @param <E> the elements in this stack
  * @author Ethan Van De Woestyne
  */
-public interface StackADT<E> {
+public interface OldStackADT<E> {
     
     /**
      * Pushes an element onto the top of this stack.
@@ -48,7 +49,7 @@ public interface StackADT<E> {
      * @pre Both stacks must have implementations of the equals method
      * @post The stack remains unchanged
      */
-    boolean equals(StackADT<E> that);
+    boolean equals(OldStackADT<E> that);
 	
 	/**
      * Returns an iterator over the elements in this stack in proper sequence
