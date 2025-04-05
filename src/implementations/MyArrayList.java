@@ -12,7 +12,7 @@ import utilities.Iterator;
  */
 public class MyArrayList<E> implements ListADT<E>
 {
-
+	private static final long serialVersionUID = 1L;
 	private static final int DEFAULT_CAPACITY = 10;
 	private E[] elements;
 	private int size;
@@ -213,7 +213,6 @@ public class MyArrayList<E> implements ListADT<E>
 		return false;
 	}
 
-	@SuppressWarnings("unchecked")
 	@Override
 	public E[] toArray(E[] toHold) throws NullPointerException
 	{
