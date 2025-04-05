@@ -5,17 +5,25 @@ import java.io.Serializable;
 import utilities.StackADT;
 import utilities.Iterator;
 
+/**
+ * An implementation of stack using MyArrayList.
+ *
+ * @param <E> the type of elements in this stack
+ */
 public class MyStack<E> implements StackADT<E>, Serializable
 {
 	private static final long serialVersionUID = 1L;
 
-	private MyArrayList<E> list;
+	private MyArrayList<E> list; // list to store stack elements
 
 	public MyStack()
 	{
 		list = new MyArrayList<>();
 	}
 
+	/**
+	 * Adds an element to the top of the stack.
+	 */
 	@Override
 	public void push(E toAdd) throws NullPointerException
 	{
@@ -94,7 +102,7 @@ public class MyStack<E> implements StackADT<E>, Serializable
 	@Override
 	public boolean contains(E toFind) throws NullPointerException
 	{
-		return list.contains(toFind);
+		return list.contains(toFind); // checks if the stack contains a given element
 	}
 
 	@Override
@@ -143,7 +151,7 @@ public class MyStack<E> implements StackADT<E>, Serializable
 		if (that == null)
 			throw new NullPointerException("Compared stack is null.");
 
-		if (this.size() != that.size())
+		if (this.size() != that.size()) // checks if this stack is equal to another
 			return false;
 
 		Iterator<E> thisIter = this.iterator();
