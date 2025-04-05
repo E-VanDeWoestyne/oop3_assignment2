@@ -6,10 +6,9 @@ import exceptions.EmptyQueueException;
 
 
 /**
- * Write an implementation for the utility class MyArrayList.java using the supplied
- * ListADT.java and Iterator.java interfaces using an array as the underlying data structure to
- * store the elements in this list.
+ * This class represents a Queue meant to be used by XMLParser
  * @author Mace Howald
+ * @version 1.0
  */
 
 public class MyQueue<E> implements QueueADT<E> {

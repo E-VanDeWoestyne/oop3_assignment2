@@ -6,12 +6,9 @@ import utilities.ListADT;
 import utilities.Iterator;
 
 /**
- * Repeat steps 3–4 for the utility class MyDLL.java using a linked list as the underlying data
- * structure to store each element in a node, based on the same ListADT.java and
- * Iterator.java interfaces provided by your instructor.
- * a. Your implementation should also include a MyDLLNode.java class to store each
- * individual element in the DLL. 
+ * This class is a doubly linked list to be used by MyQueue
  * @author Mace Howald
+ * @version 1.1
  */
 
 public class MyDLL<E> implements ListADT<E> {
