@@ -8,17 +8,33 @@ import exceptions.EmptyQueueException;
 import implementations.MyQueue;
 import implementations.MyStack;
 
+
+/**
+ * A simple XML validator that checks for proper XML structure.
+ * The parser reads XML content and reports any errors found.
+ * @author Ethan Van De Woestyne
+ */
 public class XMLParser
 {
 	private MyStack<TagInfo> stack;
 	private MyQueue<String> errors;
 
+	/**
+	 * Inner class to store information about XML tags during parsing.
+	 */
 	private static class TagInfo
 	{
 		String name;
 		String fullTag;
 		int lineNumber;
 
+		/**
+		 * Constructs a TagInfo object with the specified tag details.
+		 * 
+		 * @param name The name of the XML tag
+		 * @param fullTag The full content of the tag including attributes
+		 * @param lineNumber The line number where the tag appears in the source
+		 */
 		TagInfo(String name, String fullTag, int lineNumber)
 		{
 			this.name = name;
@@ -27,12 +43,20 @@ public class XMLParser
 		}
 	}
 
+	/**
+	 * Constructs an XMLParser with empty stack and error queue.
+	 */
 	public XMLParser()
 	{
 		stack = new MyStack<>();
 		errors = new MyQueue<>();
 	}
 
+	/**
+	 * Entry point for the application. Reads an XML file and validates its structure.
+	 * 
+	 * @param args Command line arguments. Expected to contain a single file path to the XML file
+	 */
 	public static void main(String[] args)
 	{
 		if (args.length != 1)
@@ -54,6 +78,13 @@ public class XMLParser
 		}
 	}
 
+	/**
+	 * Parses the provided XML string and validates its tag structure.
+	 * The method checks for proper opening and closing of tags and reports any errors found.
+	 * Results are printed to standard output.
+	 * 
+	 * @param xml The XML content to be parsed and validated
+	 */
 	public void parse(String xml)
 	{
 		String[] lines = xml.split("\n");
